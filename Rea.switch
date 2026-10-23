@@ -1,0 +1,40 @@
+
+import java.util.Scanner;
+
+public class yaya {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Jenis memebership: ");
+        String kategori = in.nextLine();
+        System.out.print("Total belanja: ");
+        double totalBelanja = in.nextDouble();
+        double diskon = 0;
+
+        switch (kategori) {
+            case "GOLD":
+                diskon = 0.2;
+                break;
+            case "SILVER":
+                diskon = 0.15;
+                break;
+            case "BRONZE":
+                diskon = 0.1;
+                break;
+            default:
+                diskon = 0;
+                kategori = "REGULAR";
+                break;
+
+        }
+        double totalDiskon = totalBelanja * diskon;
+        double totalBayar = totalBelanja - totalDiskon;
+
+        System.out.printf("""
+                Jenis Membership  : %s
+                Total Belanja     : Rp %,.0f
+                Diskon (20%%)     : Rp %,.0f
+                Total Bayar       : Rp %,.0f
+                """, kategori, totalBelanja, totalDiskon, totalBayar);
+
+    }
+}
