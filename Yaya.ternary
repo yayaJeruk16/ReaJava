@@ -1,0 +1,25 @@
+
+import java.util.Scanner;
+
+public class ternary {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Total belanja: ");
+        double totalBelanja = in.nextDouble();
+
+        double diskon = (totalBelanja >= 100000) ? 0.15 : 0;
+        String status = (totalBelanja >= 100000) ? "Berhak Mendapatkan Diskon" : "Tidak Berhak";
+
+        double totalDiskon = totalBelanja * diskon;
+        double totalAkhir = totalBelanja - totalDiskon;
+
+        System.out.printf("""
+            Total Belanja   : Rp %,.0f
+            Status promo    : %s
+            Total Diskon    : Rp %,.0f
+            Total Harga Akhir: Rp %,.0f
+        """, totalBelanja, status, totalDiskon, totalAkhir);
+
+        }
+    }
+
